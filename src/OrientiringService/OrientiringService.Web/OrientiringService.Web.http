@@ -1,6 +1,3 @@
 @OrientiringService.Web_HostAddress = http://localhost:5251
 
-GET {{OrientiringService.Web_HostAddress}}/weatherforecast/
-Accept: application/json
-
 ###

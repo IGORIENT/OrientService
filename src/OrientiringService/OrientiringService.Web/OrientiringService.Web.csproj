@@ -11,4 +11,14 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OrientiringService.Domain\OrientiringService.Domain.csproj" />
+    <ProjectReference Include="..\OrientiringService.Infrastructure\OrientiringService.Infrastructure.csproj" />
+    <ProjectReference Include="..\OrientirungService.Application\OrientiringService.Application.csproj" />
+  </ItemGroup>
+
 </Project>

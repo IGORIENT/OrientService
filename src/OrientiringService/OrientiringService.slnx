@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="OrientiringService.Domain/OrientiringService.Domain.csproj" Id="1bf08e19-effb-4589-8537-54ee5e078da6" />
+  <Project Path="OrientiringService.Infrastructure/OrientiringService.Infrastructure.csproj" Id="438c7cfe-8ac7-42f6-9946-9b1a4064967e" />
   <Project Path="OrientiringService.Web/OrientiringService.Web.csproj" />
+  <Project Path="OrientirungService.Application/OrientiringService.Application.csproj" Id="6395772b-928a-4fe5-8959-ecef35459576" />
 </Solution>
