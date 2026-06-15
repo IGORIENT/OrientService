@@ -9,9 +9,4 @@
 	<ItemGroup>
 		<ProjectReference Include="..\OrientiringService.Domain\OrientiringService.Domain.csproj" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Maps\" />
-	  <Folder Include="Users\" />
-	</ItemGroup>
 </Project>
