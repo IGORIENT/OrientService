@@ -1,9 +1,8 @@
-﻿using OrientiringService.Application.Abstractions;
+﻿using Microsoft.EntityFrameworkCore;
+using OrientiringService.Application.Abstractions;
 using OrientiringService.Domain.Users;
 using OrientiringService.Infrastructure.Persistence;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace OrientiringService.Infrastructure.Repositories
 {
@@ -18,8 +17,36 @@ namespace OrientiringService.Infrastructure.Repositories
 
         public Task<User?> GetByIdAsync(Guid id, CancellationToken cancellationToken)
         {
-            return appDbContext.Users.First
+            return appDbContext.Users.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
         }
+
+        public Task<User?> GetByLoginAsync(string login, CancellationToken cancellationToken)
+        {
+            return appDbContext.Users.FirstOrDefaultAsync(x => x.Login == login, cancellationToken);
+        }
+
+        public async Task<IReadOnlyCollection<User>> SearchAsync(string query, CancellationToken cancellationToken)
+        {
+            query = query.Trim();
+            return await appDbContext.Users
+                .Where(x => 
+                x.DisplayName.Contains(query) || 
+                (x.Login != null && x.Login.Contains(query)))
+                .OrderBy(x => x.DisplayName)
+                .ToListAsync(cancellationToken);
+        }
+
+        public async Task AddAsync(User user, CancellationToken cancellationToken)
+        { 
+            await appDbContext.Users.AddAsync(user, cancellationToken);
+            await appDbContext.SaveChangesAsync(cancellationToken);
+        }
+
+        ////public async void UpdateAsync(User user, CancellationToken cancellationToken)
+        ////{
+        ////    appDbContext.Update(user);
+        ////    await appDbContext.SaveChangesAsync(cancellationToken);
+        ////}
 
 
     }
