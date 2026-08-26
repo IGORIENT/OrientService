@@ -1,0 +1,9 @@
+@host = https://localhost:7163
+@accessToken = paste-access-token-here
+
+### Without a token this request must return 401.
+GET {{host}}/api/v1/users/me
+
+### A valid Keycloak access token returns the local application user.
+GET {{host}}/api/v1/users/me
+Authorization: Bearer {{accessToken}}

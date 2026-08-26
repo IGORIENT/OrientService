@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>OrienteeringService.Application</RootNamespace>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\OrienteeringService.Domain\OrienteeringService.Domain.csproj" />
+	</ItemGroup>
+</Project>

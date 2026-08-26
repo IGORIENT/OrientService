@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="src/OrienteeringService/OrienteeringService.Application/OrienteeringService.Application.csproj" />
+  <Project Path="src/OrienteeringService/OrienteeringService.Domain/OrienteeringService.Domain.csproj" />
+  <Project Path="src/OrienteeringService/OrienteeringService.Infrastructure/OrienteeringService.Infrastructure.csproj" />
+  <Project Path="src/OrienteeringService/OrienteeringService.Web/OrienteeringService.Web.csproj" />
+  <Project Path="tests/OrienteeringService.Application.Tests/OrienteeringService.Application.Tests.csproj" />
+</Solution>
